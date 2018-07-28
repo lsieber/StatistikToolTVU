@@ -1,0 +1,88 @@
+<!Doctype html>
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<title>Eingabe Disziplin, Wettkampf, Mitglieder</title>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="inc/front.js"></script>
+
+
+
+</head>
+
+<body onload="activ()">
+    <h2>Eingabe Athlet TVU Bestenliste</h2>
+    <form action="eingabe_a.php" method="post">
+    <p>
+        Vorname: <input type="text" name="vorname" id="vorname" oninput='eval_mit()' /> <br />
+        Name: <input type="text" name="name" id="name" oninput='eval_mit()'/> <br />
+        Jg:  <input type="number" id="jg" name="jg" oninput='activ()' min='1850' max='2050' value='2007'/>      z.B. 1993, bei Staffeln den &auml;lteren eingeben         <br />
+        Geschlecht:  <input type="number" name="sex" min='1' max='3' value="2"/>   1=weiblich, 2=m&auml;nnlich 3=Staffeln        <br />
+        Aktivität: <input type="number" id='aktiv' name="aktiv" oninput='activ()' value= '1'/> <p id='result_aktiv'>tt</p>
+        <div id='result_m'></div>
+                  <br />
+        <input type="submit" value="Athlet erfassen!" />
+    </p>
+    </form>
+    
+    <h2>Eingabe Wettkampf TVU Bestenliste</h2>
+    <form action="eingabe_w.php" method="post">
+        <p>
+        Name des Wettkampfs: <input type="text" name="w_name"  /> <br />
+        Ort:  <input type="text" name="ort" />                <br />
+        Datum:  <input type="date" name="datum" />   z.B. 2013-07-15  <br />
+        <input type="submit" value="Wettkampf erfassen!" />
+        </p>
+    </form>
+
+    <h2>Eingabe Disziplin TVU Bestenliste</h2>
+     <form action="eingabe_d.php" method="post">
+        <p>
+        Name der Disziplin: <input type="text" name="disziplin" id="disziplin" oninput='eval_dis()' /> <br />
+        Art der Disziplin:  <input type="number" name="lauf" id="lauf" value="6" oninput='eval_dis()' />   1=Lauf, 2=Sprung 3=Wurf 4=Mehrkampf 5=Staffel 6=Team Mehrkampf (LMM/SVM/...)     <br />
+        Minimalwert:  <input type="number" name="min_value" id="min_value" value="5000" />      <br />
+        Maximalwert:  <input type="number" name="max_value" id="max_value" value="15000" />   
+
+        <table border="1">
+            sichtbar für:
+            <thead>
+                <th>U10</th>
+                <th>U12</th>
+                <th>U14</th>
+                <th>U16</th>
+                <th>U18</th>
+                <th>U20</th>
+                <th>Frauen</th>
+                <th>Männer</th>
+            </thead>
+    <tr>
+        <td><input type='checkbox' name='sich[]' value='10' checked='yes'></td>
+        <td><input type='checkbox' name='sich[]' value='12' checked='yes'></td>
+        <td><input type='checkbox' name='sich[]' value='14' checked='yes'></td>
+        <td><input type='checkbox' name='sich[]' value='16' checked='yes'></td>
+        <td><input type='checkbox' name='sich[]' value='18' checked='yes'></td>
+        <td><input type='checkbox' name='sich[]' value='20' checked='yes'></td>
+        <td><input type='checkbox' name='sich[]' value='201' checked='yes'></td>
+        <td><input type='checkbox' name='sich[]' value='202' checked='yes'></td>
+    </tr>
+        </table>
+        
+        <div id='result_d'></div>
+        <input type="submit" value="Disziplin erfassen!" />
+        </p>
+     </form>
+
+    <br />
+    
+    <h3>
+</body>
+<br /> <br />
+<a href="http://localhost:1337/bestenliste/"><input type="button" value="&Uuml;bersicht"/></a>
+<a href="http://localhost:1337/bestenliste/eingabe/"><input type="button" value="Eingabe Leistungen"/></a>
+
+
+
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="CallHierarchySearchScope">
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.typehierarchy.QuickHierarchy">
+		<item value="true" key="org.eclipse.php.internal.ui.editor.configuration.PHPStructuredTextViewerConfiguration$3$1DIALOG_USE_PERSISTED_SIZE"/>
+		<item value="692" key="org.eclipse.php.internal.ui.editor.configuration.PHPStructuredTextViewerConfiguration$3$1DIALOG_X_ORIGIN"/>
+		<item value="350" key="org.eclipse.php.internal.ui.editor.configuration.PHPStructuredTextViewerConfiguration$3$1DIALOG_WIDTH"/>
+		<item value="306" key="org.eclipse.php.internal.ui.editor.configuration.PHPStructuredTextViewerConfiguration$3$1DIALOG_HEIGHT"/>
+		<item value="195" key="org.eclipse.php.internal.ui.editor.configuration.PHPStructuredTextViewerConfiguration$3$1DIALOG_Y_ORIGIN"/>
+		<item value="true" key="org.eclipse.php.internal.ui.editor.configuration.PHPStructuredTextViewerConfiguration$3$1DIALOG_USE_PERSISTED_LOCATION"/>
+	</section>
+</section>

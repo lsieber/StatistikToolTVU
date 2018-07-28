@@ -1,0 +1,106 @@
+Bestenliste Männer 2017
+
+80m
+9.52	 Lukas	 Sieber	 1993	 Reichenbach
+9.73	 Stefan	 Schmocker	 1994	 Reichenbach
+10.27	 Patrick	 Chaubert	 1980	 Reichenbach
+10.46	 Rolf	 Häberli	 1984	 Reichenbach
+10.52	 Lars	 Steiner	 1995	 Reichenbach
+
+100m
+11.60	 Stefan	 Schmocker	 1994	 St. Gallen
+11.66	 Lukas	 Sieber	 1993	 Interlaken
+11.92	 Till	 Aerni	 1999	 Interlaken
+12.43	 Rolf	 Häberli	 1984	 Interlaken
+12.46	 Elias	 Donzé	 1999	 Interlaken
+12.50	 Lars	 Steiner	 1995	 Interlaken
+12.54	 Patrick	 Chaubert	 1980	 St. Gallen
+12.59	 Manuel	 Zimmermann	 1995	 St. Gallen
+12.62	 Noah	 Härri	 2000	 St. Gallen
+13.20	 Fazel	 Mohamed	 1989	 Interlaken
+
+400m
+53.98	 Stefan	 Schmocker	 1994	 Reichenbach
+57.99	 Patrick	 Chaubert	 1980	 Reichenbach
+1:00.25	 Rolf	 Häberli	 1984	 Reichenbach
+
+800m
+2:19.70	 Fazel	 Mohamed	 1989	 Reichenbach
+2:25.86	 Raphael	 Liechti	 1993	 Reichenbach
+
+1000m
+2:48.24	 Stefan	 Schmocker	 1994	 St. Gallen
+2:58.34	 Manuel	 Zimmermann	 1995	 St. Gallen
+3:04.25	 Lukas	 Sieber	 1993	 Interlaken
+3:05.11	 Patrick	 Chaubert	 1980	 Interlaken
+3:05.24	 Till	 Aerni	 1999	 Interlaken
+3:06.21	 Noah	 Härri	 2000	 St. Gallen
+3:08.39	 Fazel	 Mohamed	 1989	 Interlaken
+3:10.08	 Elias	 Donzé	 1999	 Interlaken
+3:12.16	 Lars	 Steiner	 1995	 Interlaken
+3:32.89	 Rolf	 Häberli	 1984	 Interlaken
+
+Hoch
+1.80	 Lukas	 Sieber	 1993	 Interlaken
+1.80	 Stefan	 Schmocker	 1994	 St. Gallen
+1.65	 Lars	 Steiner	 1995	 Interlaken
+1.65	 Patrick	 Chaubert	 1980	 Interlaken
+1.65	 Rolf	 Häberli	 1984	 Reichenbach
+1.65	 Manuel	 Zimmermann	 1995	 St. Gallen
+1.55	 Elias	 Donzé	 1999	 Interlaken
+1.45	 Till	 Aerni	 1999	 Interlaken
+1.40	 Noah	 Härri	 2000	 St. Gallen
+
+Weit
+6.78	 Lukas	 Sieber	 1993	 Reichenbach
+6.67	 Stefan	 Schmocker	 1994	 Reichenbach
+5.72	 Lars	 Steiner	 1995	 Interlaken
+5.66	 Till	 Aerni	 1999	 Interlaken
+5.56	 Elias	 Donzé	 1999	 Interlaken
+5.43	 Patrick	 Chaubert	 1980	 Interlaken
+5.27	 Noah	 Härri	 2000	 St. Gallen
+5.25	 Manuel	 Zimmermann	 1995	 St. Gallen
+5.12	 Rolf	 Häberli	 1984	 Interlaken
+4.39	 Fazel	 Mohamed	 1989	 Interlaken
+
+Kugel 5kg
+14.61	 Stefan	 Schmocker	 1994	 Reichenbach
+14.05	 Lukas	 Sieber	 1993	 St. Gallen
+11.57	 Lars	 Steiner	 1995	 St. Gallen
+11.13	 Xander	 Kübli	 1978	 Reichenbach
+10.97	 Till	 Aerni	 1999	 St. Gallen
+10.63	 Patrick	 Chaubert	 1980	 Interlaken
+10.59	 Manuel	 Zimmermann	 1995	 St. Gallen
+10.21	 Elias	 Donzé	 1999	 Interlaken
+9.90	 Rolf	 Häberli	 1984	 Interlaken
+7.78	 Noah	 Härri	 2000	 St. Gallen
+7.55	 Fazel	 Mohamed	 1989	 Interlaken
+
+Schleuderball 2kg
+42.62	 Rolf	 Häberli	 1984	 Reichenbach
+
+Speer 800g
+48.04	 Stefan	 Schmocker	 1994	 Reichenbach
+45.69	 Lukas	 Sieber	 1993	 Reichenbach
+37.67	 Xander	 Kübli	 1978	 Reichenbach
+36.89	 Lars	 Steiner	 1995	 Reichenbach
+
+LMM 5-Kampf
+4029	 Stefan	 Schmocker	 1994	 St. Gallen
+3817	 Lukas	 Sieber	 1993	 Interlaken
+3237	 Lars	 Steiner	 1995	 Interlaken
+3220	 Manuel	 Zimmermann	 1995	 St. Gallen
+3191	 Patrick	 Chaubert	 1980	 Interlaken
+3172	 Till	 Aerni	 1999	 Interlaken
+3085	 Elias	 Donzé	 1999	 Interlaken
+2844	 Rolf	 Häberli	 1984	 Interlaken
+2787	 Noah	 Härri	 2000	 St. Gallen
+2035	 Fazel	 Mohamed	 1989	 Interlaken
+
+LMM Mixed Aktiv
+13985	 TVU	 Mixed Aktiv	 2017	 St. Gallen
+12227	 TVU	 Mixed Aktiv	 2017	 Interlaken
+
+LMM Männer
+14183	 TVU	 Männer	 2017	 St. Gallen
+14107	 TVU	 Männer	 2017	 Interlaken

@@ -1,0 +1,1 @@
+<div class='csc-header csc-header-n1'><h1 class='csc-firstHeader'>Bestenliste U10 Weiblich 2012 Top 1001</h1></div><table><tr><th>Leistung</th><th>Vorname</th><th>Name</th><th>Jg</th><th>Ort</th><th>Datum</th></tr><tr><td colspan=6><b>800m</td></b></tr><tr><td>5.00</td><td>Jana</td><td>Giovinetti</td><td>2003</td><td>Interlaken</td><td>29.5.2012</td></tr><table>

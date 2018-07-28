@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;TimeUtils.php&apos; to &apos;utils&apos;" description="Move &apos;TimeUtils.php&apos; to &apos;utils&apos;" destination="utils" element1="inc/TimeUtils.php" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1532773032797" updateReferences="true"/>
+</session>

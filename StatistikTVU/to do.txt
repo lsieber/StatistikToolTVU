@@ -1,0 +1,25 @@
+----------------------------------
+TO DO LIST Statistiktool
+----------------------------------
+
+create txt file with plain text and tab
+
+Auto import from PDF????
+
+Mehrkampf anklicken, automatisch Disziplinen anzeigen für eingabe
+
+aktivit$ten verändern in eingabe oder bei eingabe neues mittglied
+automatische aktivität zurücksetzten wenn zb seit drei jahren kein wettkampf mehr bestritten....
+
+Schnällscht bödeler: U10W Michel Alisa, U16 W Vorläufe??, Mühlematter Pirjo still TVU???
+UBS Kids Cup: U10W Michel Alisa???
+
+eingabe:
+disziplin anzeigen wenn bestehend
+disziplin vodefinierte werte löschen
+
+output of wettkämpfe per kategorie als tabelle.
+
+alle besenlisten gleichzeitig als html code ausgeben
+
+bestenlisten titel komplexe titel.

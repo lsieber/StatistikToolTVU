@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;StatistikTVU/inc/TimeUtils&apos; to &apos;TimeUtils.php&apos;" description="Rename resource &apos;TimeUtils&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="inc/TimeUtils" name="TimeUtils.php" stamp="1524320106503" updateReferences="true"/>
+</session>

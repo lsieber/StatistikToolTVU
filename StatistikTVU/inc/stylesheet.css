@@ -1,0 +1,38 @@
+.einstellungen {
+	margin: auto;
+	width: 30em;
+}
+h3 {
+	text-align: center;
+}
+.titleradio {
+	font-weight: bold;
+	background-color: yellow;
+}
+ul {
+	margin: 0em;
+	list-style: none;
+ 	padding-left: 0em;
+}
+li {
+	float: left;
+	padding: 1em;
+}
+
+input[type="number"] {
+   width:4em;
+}
+#result_d{
+	float: left;
+}
+.submit {
+	clear: both; /* kein float mehr ab hier */
+    text-align: right;
+
+}
+.links {
+	margin: auto;
+	width: 27em;
+	clear: both; /* kein float mehr ab hier */
+	padding-top: 3em;
+}

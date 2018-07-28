@@ -1,0 +1,723 @@
+<!-- ===========================================================
+SELFHTML Documentation Marup Language (SDML)
+DTD for the online Documentation for SELFHTML
+
+Author: Thomas J. Sebestyen, thomas.js@selfhtml.org
+
+Full DTD with included XML for full (i.e. ID/IDEF) validating
+
+=========================================================== -->
+
+<!-- First working draft:	2004-04-18						-->
+<!-- Version 0.9		2004-04-23							-->
+<!-- Version 0.98		2004-04-28							-->
+<!-- Version 0.99		2007-03-03							-->
+<!-- Version 0.99b		2007-03-11							-->
+<!-- Version 0.99c		2007-03-12							-->
+<!-- Version 0.99d		2007-03-19							-->
+<!-- Version 0.99e		2007-03-19							-->
+<!-- Version 1.00		2007-06-09							-->
+<!-- Version 1.01		2008-03-25 Christian Seiler			-->
+<!-- Version 1.1		2008-05-11 							-->
+<!-- Version 1.2		2008-12-04 Christian Seiler			-->
+
+
+
+
+
+<!ENTITY % full.module "INCLUDE">
+<![%full.module;[
+	<!ENTITY % idindex.dtd SYSTEM "idindex.dtd">
+	%idindex.dtd;
+	<!ENTITY idindex SYSTEM "../sdml/idindex.xml">
+	<!ELEMENT	documentation (selfhtml)>
+	<!ELEMENT	idindex	(selfhtml)>
+	<!ENTITY % idref-req.att
+		"idref	IDREF	#REQUIRED"
+	>
+	<!ENTITY % reference.att
+		"reference	IDREF		#IMPLIED">
+	<!-- content modell for document description and information -->
+	<!ENTITY % document.information.mdl
+		"idindex, document-description, document-keywords">
+]]>
+
+<!ENTITY % simple.module "IGNORE">
+<![%simple.module;[
+	<!ENTITY idindex "Bitte beachten, dass mit dieser DTD oder bei dieser Datei nur eine Teilvalidierung moechglich ist!">
+	<!ELEMENT	documentation	(#PCDATA)>
+	<!ELEMENT	idindex	(#PCDATA)>
+	<!ENTITY % idref-req.att
+		"idref	CDATA	#REQUIRED"
+	>
+	<!ENTITY % reference.att
+		"reference	CDATA	#IMPLIED">
+	<!-- content modell for document description and information -->
+	<!ENTITY % document.information.mdl
+		"idindex, document-description, document-keywords">
+]]>
+
+<!ENTITY % complete.module "IGNORE">
+<![%complete.module;[
+	<!ENTITY % idindex.dtd SYSTEM "idindex.dtd">
+	%idindex.dtd;
+	<!ENTITY idindex "">
+	<!ELEMENT	documentation (selfhtml, chapter+)>
+	<!ENTITY % idref-req.att
+		"idref	IDREF	#REQUIRED"
+	>
+	<!ENTITY % reference.att
+		"reference	IDREF		#IMPLIED">
+	<!-- content modell for document description and information -->
+	<!ENTITY % document.information.mdl
+		"document-description, document-keywords">
+]]>
+
+
+<!ENTITY % useragent SYSTEM "useragent.ent">
+	%useragent;
+<!ENTITY % weblang SYSTEM "weblang.ent">
+	%weblang;
+<!-- ...................................................................... -->
+<!-- Entities for classes of standalone block-level elements				-->
+<!-- ...................................................................... -->
+<!-- block-level elements for editorial matter -->
+<!ENTITY % block.editorial.class
+	"note | translation-note">
+<!-- block level content elemets -->
+<!ENTITY % block.content.class
+	"p | blockquote | ol | ul | dl | table | example">
+
+<!-- elements for external block-level objects -->
+<!-- 
+	This is a placeholder for the <object> element.
+	Leave this entity empty unless the <object> element 
+	is well described!
+	May be used later in %block.content.mix;.
+ -->
+<!ENTITY % block.object.class "">
+
+
+
+<!-- ...................................................................... -->
+<!-- Entities for classes of phrase-level standalone elements			 	-->
+<!-- ...................................................................... -->
+<!-- acronym-type elemets -->
+<!ENTITY % inline.acronym.class
+	"abbr | acronym">
+<!-- inline level phrase elemets -->
+<!ENTITY % inline.emphasis.class
+	"em | strong | sub | sup | cite">
+<!ENTITY % emphasis.inline.class
+	"#PCDATA | abbr | acronym | sub | sup | code | var | kbd">
+<!-- inline level technical elemets -->
+<!ENTITY % inline.technical.class
+	"code | var | kbd | ua | wl | deprecated | readwrite">
+<!-- inline level elements for index entries -->
+<!ENTITY % inline.indexterm.class 
+	"keyword">
+<!-- inline link-type elements -->
+<!ENTITY % inline.hyperlink.class
+	"hyperlink | interlink">
+<!ENTITY % inline.hyperlinkcontent.class
+	"abbr | acronym | em | strong | sub | sup | cite | code | var | kbd">
+<!-- content mix for the example element for future use, 
+if somone is crazy enough to put syntxhighlightling into the xml -->
+<!ENTITY % example.content.class
+	"#PCDATA | em | strong | sub | sup | code | var | kbd">
+<!-- inline level elements for illustrations  -->
+<!ENTITY % inline.object.class
+	"image">
+
+<!-- for generating needed space in the output -->
+<!ENTITY % inline.space.class
+	"br">
+<!-- ........................ -->
+
+
+
+<!-- ...................................................................... -->
+<!-- Entities for mixtures of standalone elements							-->
+<!-- ...................................................................... -->
+<!-- elementmix for block level content -->
+<!ENTITY % block.content.mix
+	"%block.content.class; | %block.editorial.class;">
+
+<!-- elementmix for inline level text content -->
+<!ENTITY % inline.text.mix
+	"%inline.acronym.class; 
+	| %inline.emphasis.class; 
+	| %inline.technical.class; 
+	| %inline.indexterm.class; 
+	| %inline.hyperlink.class;">
+
+<!-- elementmix for inline level content -->
+<!ENTITY % inline.content.mix
+	"%inline.acronym.class; 
+	| %inline.emphasis.class; 
+	| %inline.technical.class; 
+	| %inline.indexterm.class; 
+	| %inline.hyperlink.class; 
+	| %inline.object.class;">
+
+
+
+<!-- ...................................................................... -->
+<!-- Entities for mixtures of #PCDATA and phrase-level elements				-->
+<!-- ...................................................................... -->
+<!ENTITY % inline.text.pcd.mix
+	"#PCDATA | %inline.space.class; | %inline.text.mix;">
+
+<!ENTITY % inline.content.pcd.mix
+	"#PCDATA | %inline.space.class; | %inline.content.mix;">
+
+<!ENTITY % inline.hyperlink.pcd.mix
+	"#PCDATA | %inline.space.class; | %inline.hyperlink.class;">
+
+<!ENTITY % inline.space.pcd.mix
+	"#PCDATA | %inline.space.class;">
+
+<!ENTITY % inline.indexterm.pcd.mix
+	"#PCDATA | %inline.indexterm.class;">
+
+<!ENTITY % inline.acronymemphasis.pcd.mix
+	"#PCDATA | %inline.acronym.class; | em | strong">
+
+
+<!-- ...................................................................... -->
+<!-- Entities for mixtures of #PCDATA and block-level elements				-->
+<!-- ...................................................................... -->
+<!ENTITY % paragraph.inline.pcd.mix
+	"#PCDATA | %inline.space.class; | %inline.content.mix; | p">
+
+<!-- ...................................................................... -->
+<!-- Entities for describeing content modells							-->
+<!-- ...................................................................... -->
+<!-- content modell for content description and information -->
+<!ENTITY % content.information.mdl
+	"title, subtitle?, preface?, resource-list?">
+
+<!-- content modell for supported user agents (browser) and/or weblanguage (i.e html, xsl, etc.) specifications -->
+<!ENTITY % support.mdl
+	"((weblang, browser?) | browser), deprecated?, readwrite?">
+
+<!-- content model for page and beginnpage -->
+<!ENTITY % page.mdl
+	"%document.information.mdl;, title, subtitle?, (pageunit | xi:include)+">
+<!ENTITY % unit.mdl
+	"index?, heading, support?, (%block.content.mix;)*, unit*">
+
+
+<!-- ...................................................................... -->
+<!-- Entities for Attributes											-->
+<!-- ...................................................................... -->
+
+<!-- name: Unique identifier of element -->
+<!ENTITY % common.att
+	"name	NMTOKEN	#IMPLIED
+	class	NMTOKENS	#IMPLIED
+	style	CDATA	#IMPLIED">
+<!-- name: Unique identifier of element; a value must be supplied -->
+<!ENTITY % common-req.att
+	"name	NMTOKEN	#REQUIRED
+	class	NMTOKENS	#IMPLIED
+	style	CDATA	#IMPLIED">
+<!ENTITY % id.att
+	"id	ID	#IMPLIED">
+	
+<!-- languagecode as per [ISO 639-1:2002 Codes for the 
+representation of names of languages - Part 1: Alpha-2 code] 
+(http://www.loc.gov/standards/iso639-2/php/code_list.php)  -->
+<!ENTITY % language.att
+	"lang		NMTOKEN		#IMPLIED">
+<!ENTITY % language-req.att
+	"lang		NMTOKEN		#REQUIRED">
+<!ENTITY % hreflang.att
+	"hreflang	NMTOKEN		#IMPLIED">
+
+<!-- person related attributes -->
+<!ENTITY % editor-req.att
+	"editor	CDATA		#REQUIRED">
+
+<!-- media type, as per RFC2045 http://www.ietf.org/rfc/rfc2045.txt -->
+<!ENTITY % mimetype.att
+	"mimetype	CDATA	#IMPLIED">
+<!ENTITY % mimetype-req.att
+	"mimetype	CDATA	#REQUIRED">
+
+<!-- contains an URI -->
+<!ENTITY % href.att
+	"href	CDATA		#IMPLIED">
+<!ENTITY % href-req.att
+	"href	CDATA		#REQUIRED">
+<!-- contains an URI -->
+<!ENTITY % source-req.att
+	"source	CDATA		#REQUIRED">
+
+
+
+
+<!-- ...................................................................... -->
+<!-- Element declarations 											-->
+<!-- ...................................................................... -->
+
+<!-- element declarations for XML-Inclusion-->
+<!ENTITY xifallback "<xi:fallback xmlns:xi='http://www.w3.org/2001/XInclude'><note type='warning' editor='XMLPARSER'>Die angegebene XML-Datei konnte nicht gefunden werden!</note></xi:fallback>">
+<!ELEMENT xi:include (xi:fallback)>
+<!ATTLIST xi:include
+		href		CDATA	#REQUIRED
+		xmlns:xi	CDATA	#FIXED	"http://www.w3.org/2001/XInclude"
+		parse		(xml|text)	"xml"
+		encoding	CDATA	#IMPLIED 
+>
+<!ELEMENT xi:fallback (#PCDATA | note)*>
+<!ATTLIST xi:fallback
+		xmlns:xi	CDATA	#FIXED	"http://www.w3.org/2001/XInclude"
+>
+
+<!-- element declarations for document metainaformations -->
+<!ELEMENT	document-description	(#PCDATA)>
+<!ELEMENT	document-keywords		(#PCDATA)>
+<!-- end of element declarations for document metainaformations -->
+
+
+
+<!-- element declarations for the documents inner hierarchy -->
+<!ELEMENT	chapter	(%document.information.mdl;, %content.information.mdl;, (xi:include | sub-chapter | page)+)>
+<!ATTLIST	chapter
+	%idref-req.att;
+>
+<!ELEMENT	sub-chapter	(%document.information.mdl;, %content.information.mdl;, (xi:include | subsub-chapter | page)+)>
+<!ATTLIST	sub-chapter
+	%idref-req.att;
+>
+<!-- diese zwei elemente sollen normalerweise nicht gebraucht werden -->
+	<!ELEMENT	subsub-chapter	(%document.information.mdl;, %content.information.mdl;, (xi:include | subsubsub-chapter | page)+)>
+	<!ATTLIST	subsub-chapter
+		%idref-req.att;
+	>
+	<!ELEMENT	subsubsub-chapter	(%document.information.mdl;, %content.information.mdl;, (xi:include | page)+)>
+	<!ATTLIST	subsubsub-chapter
+		%idref-req.att;
+	>
+<!-- ................................................................. -->
+
+<!ELEMENT	page		(%page.mdl;)>
+<!ATTLIST	page
+	%idref-req.att;
+>
+<!ELEMENT	pageunit	(idindex?, %unit.mdl;)>
+<!ATTLIST	pageunit
+	%common-req.att;
+>
+<!ELEMENT	unit	(%unit.mdl;)>
+<!ATTLIST	unit
+	%common.att;
+	type		CDATA	#IMPLIED
+>
+
+<!-- end of element declarations for the documents inner hierarchy -->
+
+
+<!-- elemet declarations for content description and information -->
+<!ELEMENT	description		(#PCDATA)>
+<!ELEMENT	title			(#PCDATA)>
+<!ATTLIST	title
+	%common.att;
+>
+<!ELEMENT	subtitle		(#PCDATA)>
+<!ATTLIST	subtitle
+	%common.att;
+>
+<!ELEMENT	preface			(%inline.hyperlink.pcd.mix;)*>
+<!ATTLIST	preface
+	%common.att;
+>
+<!ELEMENT	heading			(%inline.indexterm.pcd.mix;)*>
+<!ATTLIST	heading
+	%common.att;
+>
+<!-- end of elemet declarations for content description and information -->	
+
+
+
+<!-- element declarations for editorial matter -->
+<!ELEMENT	br		EMPTY>
+<!ELEMENT	note		(%inline.space.pcd.mix;)*>
+<!ATTLIST	note
+	%common.att;
+	type	(advice
+			|issue
+			|question
+			|todo
+			|warning)	#REQUIRED
+	%editor-req.att;
+>
+<!ELEMENT	translation-note	(%block.content.class;)+>
+<!ATTLIST	translation-note
+	%common.att;
+>
+<!-- end of element declarations for editorial matter -->
+
+
+<!-- element declatations for generating index-entries and keyword-entries  -->
+<!ELEMENT	keyword		(%inline.acronymemphasis.pcd.mix;)*>
+<!ATTLIST	keyword
+	alias		CDATA	#IMPLIED
+>
+<!ELEMENT	index		(element+ | function+ | property+ | obj+)>
+<!ELEMENT	summary	(%inline.text.pcd.mix;)*>
+<!ELEMENT	element	((summary, attribute*) | attribute+)>
+<!ATTLIST	element
+	name	CDATA	#REQUIRED
+>
+<!ELEMENT	attribute	(%inline.text.pcd.mix;)*>
+<!ATTLIST	attribute
+	name	CDATA	#REQUIRED
+>
+<!ELEMENT	function	(summary)>
+<!ATTLIST	function
+	name	CDATA	#REQUIRED
+>
+<!-- not used, maybe later for function -->
+<!ELEMENT	argument	(%inline.text.pcd.mix;)*>
+<!ATTLIST	argument
+	type	CDATA	#REQUIRED
+>
+<!ELEMENT	property	((summary, value*) | value+)>
+<!ATTLIST	property
+	name	CDATA	#REQUIRED
+>
+<!ELEMENT	value		(%inline.text.pcd.mix;)*>
+<!ATTLIST	value
+	name	CDATA	#REQUIRED
+>
+<!ELEMENT	obj	((summary, prop*, method*) | (prop+, method*))>
+<!ATTLIST	obj
+	name	CDATA	#REQUIRED
+>
+<!ELEMENT	prop		(%inline.text.pcd.mix;)*>
+<!ATTLIST	prop
+	name	CDATA	#REQUIRED
+>
+<!ELEMENT	method	(%inline.text.pcd.mix;)*>
+<!ATTLIST	method
+	name	CDATA	#REQUIRED
+>
+<!-- end of element declatations for generating index-entries and keyword-entries  -->
+
+
+
+<!-- element declaration for hyperlinking  -->
+<!ELEMENT	resource-list	(description, hyperlink-list+)>
+<!ELEMENT	hyperlink-list	(description?, hyperlink+)>
+<!ELEMENT	hyperlink		(#PCDATA | %inline.hyperlinkcontent.class;)*>
+<!ATTLIST	hyperlink
+	%common.att;
+	%href-req.att;
+	%hreflang.att;
+	link-type	(online-chapter
+			|online-page
+			|example-page
+			|external
+			|external-file
+			|email)			#REQUIRED
+	effect		(new | replace)	"replace"
+	title		CDATA		#IMPLIED
+	%mimetype.att;
+>
+<!ELEMENT	interlink		(#PCDATA | %inline.hyperlinkcontent.class;)*>
+<!ATTLIST	interlink
+	%common.att;
+	%reference.att;
+	target-anchor		NMTOKEN		#IMPLIED
+	link-type	(chapter
+			|page
+			|anchor-down
+			|anchor-up
+			|file)			#REQUIRED
+	effect		(new | replace)	"replace"
+	title		CDATA		#IMPLIED
+>
+<!-- end of element declaration for hyperlinking -->
+
+
+
+
+<!-- element declarations for markup inline text -->
+<!ELEMENT	abbr	(#PCDATA)>
+<!ATTLIST	abbr
+	%common.att;
+	expansion	CDATA		#IMPLIED
+>
+<!ELEMENT	acronym		(#PCDATA)>
+<!ATTLIST	acronym
+	%common.att;
+	expansion	CDATA		#IMPLIED
+>
+	<!-- 
+		the expanded form of the acronym or abbrev. which 
+		could be shown as say a tooltip, or pronounced 
+		by a voice synthesiser
+	 -->
+<!ELEMENT	em		(%emphasis.inline.class;)*>
+<!ATTLIST	em
+	%common.att;
+>
+<!ELEMENT	strong	(%emphasis.inline.class;)*>
+<!ATTLIST	strong
+	%common.att;
+>
+<!ELEMENT	sub		(#PCDATA)>
+<!ATTLIST	sub
+	%common.att;
+>
+<!ELEMENT	sup		(#PCDATA)>
+<!ATTLIST	sup
+	%common.att;
+>
+<!ELEMENT	code			(%inline.space.pcd.mix;)*>
+<!ATTLIST	code
+	%common.att;
+>
+<!ELEMENT	var			(%inline.space.pcd.mix;)*>
+<!ATTLIST	var
+	%common.att;
+>
+<!ELEMENT	kbd		(#PCDATA)>
+<!ATTLIST	kbd
+	%common.att;
+>
+<!ELEMENT	cite		(#PCDATA)>
+<!ATTLIST	cite
+	%common.att;
+	%href.att;
+	%language.att;
+>
+<!-- end of element declarations for markup inline text -->
+
+
+
+<!-- element declarations for block-level content elements -->
+<!ELEMENT	p		(%inline.content.pcd.mix;)*>
+<!ATTLIST	p
+	%common.att;
+>
+<!ELEMENT	blockquote	(%paragraph.inline.pcd.mix;)*>
+<!ATTLIST	blockquote
+	%common.att;
+	%href.att;
+	%language.att;
+>
+<!ELEMENT	example			(#PCDATA)>
+<!ATTLIST	example
+	%common.att;
+	xml:space	(default | preserve)	#FIXED	"preserve"
+>
+
+<!-- element declarations for lists -->
+<!ELEMENT	ol	(li)+>
+<!ATTLIST	ol
+	%common.att;
+	liststyle	(arabic | 
+			upperalpha |
+			loweralpha | 
+			upperroman | 
+			lowerroman | 
+			none)	"arabic"
+>
+<!ELEMENT	ul	(li)+>
+<!ATTLIST	ul
+	%common.att;
+	liststyle	(circle | 
+			square | 
+			disc | 
+			none)	"circle"
+>
+<!ELEMENT	li	(%inline.content.pcd.mix; | %block.content.class;)*>
+<!ATTLIST	li
+	%common.att;
+>
+<!ELEMENT	dl		(dt|dd)+>
+<!ATTLIST	dl
+	%common.att;
+>
+<!ELEMENT	dt		(%inline.text.pcd.mix;)*>
+<!ATTLIST	dt
+	%common.att;
+>
+<!ELEMENT	dd	(%paragraph.inline.pcd.mix;)*>
+<!ATTLIST	dd
+	%common.att;
+>
+<!-- end of element declarations for lists -->
+<!-- end of element declarations for block-level content elements -->
+
+
+
+<!-- element declarations for information related to a secification and user agent -->
+<!ELEMENT	support		(%support.mdl;)>
+<!ELEMENT	browser	(ua)+>
+<!ELEMENT	ua	EMPTY>
+<!-- ATTLIST	ua	version	CDATA	#REQUIRED -->
+
+<!ELEMENT	weblang	(wl)+>
+<!ELEMENT	wl	EMPTY>
+<!-- ATTLIST	wl	version	CDATA	#REQUIRED -->
+
+<!ELEMENT	deprecated	EMPTY>
+<!ELEMENT	readwrite	EMPTY>
+<!-- ATTLIST	readwrite type	CDATA	#REQUIRED -->
+
+<!-- end of element declarations for information related to a secification and user agent -->
+
+
+
+<!-- element declaration for nontexual rescources -->
+<!ELEMENT	image	EMPTY>
+<!ATTLIST	image
+	%common.att;
+	%source-req.att;
+	description	CDATA	#REQUIRED
+	height		CDATA	#REQUIRED
+	width		CDATA	#REQUIRED
+	embed	(yes|no)		"yes"
+>
+<!-- 
+	not yet well described element, may be used for linking (or embedding)
+	different kind of binary data
+-->
+<!-- not used yet -->
+<!ELEMENT	object	(description)>
+<!ATTLIST	object
+	%common.att;
+	%source-req.att;
+	%mimetype-req.att;
+>
+<!-- end of element declaration for nontexual rescources -->
+
+
+
+
+
+<!-- ...................................................................... -->
+<!-- (X)HTML-based table model												-->
+<!-- ...................................................................... -->
+<!ENTITY % cellhalign.att
+	"align	(left
+			|center
+			|right
+			|justify
+			|char)			#IMPLIED
+	char		CDATA		#IMPLIED
+	charoff	CDATA		#IMPLIED">
+
+<!ENTITY % cellvalign.att
+	"valign	(top
+			|middle
+			|bottom
+			|baseline)		#IMPLIED">
+
+<!ENTITY % thtd.att
+	"abbr		CDATA		#IMPLIED
+	axis		CDATA		#IMPLIED
+	headers	IDREFS		#IMPLIED
+	scope		(row
+			|col
+			|rowgroup
+			|colgroup)		#IMPLIED
+	rowspan	NMTOKEN		#IMPLIED
+	colspan	NMTOKEN		#IMPLIED">
+
+<!ENTITY % width.att
+	"width		CDATA		#IMPLIED">
+
+<!ELEMENT	table		(caption?, (col*|colgroup*), thead?, tfoot?, tbody+)>
+<!ATTLIST	table
+	%common.att;
+	%width.att;
+	summary	CDATA	#REQUIRED
+	border		CDATA	#IMPLIED
+	frame	(void
+			|above
+			|below
+			|hsides
+			|lhs
+			|rhs
+			|vsides
+			|box
+			|border)	#IMPLIED
+	rules	(none
+			|groups
+			|rows
+			|cols
+			|all)		#IMPLIED
+	cellspacing	CDATA	#IMPLIED
+	cellpadding	CDATA	#IMPLIED>
+
+<!ELEMENT	caption		(%inline.text.pcd.mix;)*>
+<!ATTLIST	caption
+	%common.att;
+>
+<!ELEMENT	col			EMPTY>
+<!ATTLIST	col
+	%common.att;
+	span	CDATA		"1"
+	%width.att;
+	%cellhalign.att;
+	%cellvalign.att;
+>
+
+<!ELEMENT	colgroup	(col)*>
+<!ATTLIST	colgroup
+	%common.att;
+	span	CDATA		"1"
+	%width.att;
+	%cellhalign.att;
+	%cellvalign.att;
+>
+
+<!ELEMENT	thead		(tr)+>
+<!ATTLIST	thead
+	%common.att;
+	%cellhalign.att;
+	%cellvalign.att;
+>
+
+<!ELEMENT	tfoot		(tr)+>
+<!ATTLIST	tfoot
+	%common.att;
+	%cellhalign.att;
+	%cellvalign.att;
+>
+
+<!ELEMENT	tbody		(tr)+>
+<!ATTLIST	tbody
+	%common.att;
+	%cellhalign.att;
+	%cellvalign.att;
+>
+
+<!ELEMENT	tr			(th | td)+>
+<!ATTLIST	tr
+	%common.att;
+	%cellhalign.att;
+	%cellvalign.att;
+>
+
+<!ELEMENT	th			(%inline.content.pcd.mix; | %block.content.class;)*>
+<!ATTLIST	th
+	%common.att;
+	%thtd.att;
+	%cellhalign.att;
+	%cellvalign.att;
+>
+
+<!ELEMENT	td			(%inline.content.pcd.mix; | %block.content.class;)*>
+<!ATTLIST	td
+	%common.att;
+	%thtd.att;
+	%cellhalign.att;
+	%cellvalign.att;
+>
+<!-- end of  the (X)HTML-based table model -->
